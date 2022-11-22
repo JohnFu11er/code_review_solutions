@@ -5,13 +5,12 @@ def main():
   blast_off(10, 1, "Doge to the moon!")
 
 # region supporting functions
-def blast_off(_count, _interval, _message):
+def blast_off(_count: int, _interval: int, _message: str):
   '''Performs countdown and blastoff message
   - _count: total countdown seconds
   - _interval: pause between countdown numbers
   - _message: blast off message to display
   '''
-
 
   while _count:             # While loop that runs until '_count' reaches zero
     clear_screen()          # Clears the screen
