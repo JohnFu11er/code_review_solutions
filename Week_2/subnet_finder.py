@@ -13,11 +13,10 @@ def find_subnet(ip_add: str, mask: str) -> str:
     - ip_add: IP address
     - mask: Subnet mask '''
     
-    interface = f"{ip_add}/{mask}"                          # Joins the interface parts
-    interface_obj = ipaddress.ip_interface(interface)       # Creates an interface object
-    network_add = str(interface_obj.network).split('/')[0]  # Strips off the CIDR notation
-    
-    return network_add
+    interface = f"{ip_add}/{mask}"                      # Joins the interface parts
+    interface_obj = ipaddress.ip_interface(interface)   # Creates an interface object
+    network_add = interface_obj.network                 # Finds the network address
+    return str(network_add).split('/')[0]               # Strips off the CIDR notation
 
 
 if __name__ == "__main__":
